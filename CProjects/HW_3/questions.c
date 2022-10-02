@@ -3,7 +3,7 @@
  * How many functions does "main" calls?
  *
  * 1. From "main"
- * Calls 3 functions: f6(), f1(), f2()
+ * Calls 3 functions: f6(), f1(), f2(), printf()
  *
  * 2. From the call diagram
  * Calls 3 functions: f6(), f1(), f2()
