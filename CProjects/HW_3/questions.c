@@ -25,7 +25,7 @@
  * Which functions don't call any other functions?
  *
  * 1. From "main"
- * f3(), f6()
+ *  All functions are called
  *
  * 2. From the call diagram
  * f3(), f6()
