@@ -9,19 +9,14 @@ float f5();
 
 int main()
 {
-	f1();
 	printf("Function 1: %d\n", f1());
 
-	f2();
 	printf("Function 2: %d\n", f2());
 
-	f3();
 	printf("Function 3: %.2f\n", f3());
 
-	f4();
 	printf("Function 4: %.0f%%\n", f4());
 
-	f5();
 	printf("Function 5: %.0f%%\n", f5());
 
 	return 0;
