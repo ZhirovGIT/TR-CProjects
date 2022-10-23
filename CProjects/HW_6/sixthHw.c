@@ -10,11 +10,28 @@ float cash(float kg, float price, float discount);	// for fifth task
 
 int main()
 {
-	printf("Task 1.\nResult: %.0f%%\n\n", percent(200, 0.1));
-	printf("Task 2.\nResult: %.2f\n\n", circleLength(20));
-	printf("Task 3.\nResult: %.2f\n\n", housePrice(65, 14000.57));
-	printf("Task 4.\nResult: %.2f\n\n", salary(178.6, 30, 0.3));
-	printf("Task 5.\nResult: %.2f\n\n", cash(2., 29., 0.3));
+	// Variables
+	float justNumber = 200;		// for first task
+	float percent = 0.1;		// for first task
+
+	float radius = 20;		// for second task
+
+	int area = 65;			// for third task
+	float pricePerArea = 14000.57;	// for third task
+
+	float hours = 178.6;		// for fourth task
+	float wage = 30;		// for fourth task
+	float bonus = 0.3;		// for fourth task
+
+	float kg = 2.;			// for fifth task
+	float pricePerKg = 29.;		// for fifth task
+	float discount = 0.3;		// for fifth task
+	
+	printf("Task 1.\nResult: %.0f%%\n\n", percent(justNumber, percent));
+	printf("Task 2.\nResult: %.2f\n\n", circleLength(radius));
+	printf("Task 3.\nResult: %.2f\n\n", housePrice(area, price01));
+	printf("Task 4.\nResult: %.2f\n\n", salary(hours, wage, bonus));
+	printf("Task 5.\nResult: %.2f\n\n", cash(kg, pricePerKg, discount));
 
 	return 0;
 }
