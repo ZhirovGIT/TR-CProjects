@@ -3,7 +3,7 @@
 // declarations
 float percent(float a, float per);	// for first task
 float circleLength(float radius);	// for second task
-float housePrice(int area, float price);			// for third task
+float housePrice(int area, float price);		// for third task
 float salary(float hours, float wage, float bonus);	// for fourth task
 float cash(float kg, float price, float discount);	// for fifth task
 
