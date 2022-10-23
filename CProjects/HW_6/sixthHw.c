@@ -19,51 +19,26 @@ int main()
 	return 0;
 }
 
-/*
- * 	Task 1
- * Написать функцию float percent(float a, float per), где а-число, per-процент.
- * В нее передать из main два аргумента, высчитать процент(per) числа (a), вернуть результат в main и распечатать.
- */
-
+// Task 1
 float percent(float a, float per)
 {
 	return per * a;
 }
 
-/*
- * 	Task 2
- * Написать функцию float circleLength(float radius).
- * Высчитать длину окружности по известному радиусу(radius)передаваемому из main и распечатать вернувшееся из функции значение в main
- */
-
+// Task 2
 float circleLength(float radius)
 {
 	double pi = 3.1415926535;
 	return 2 * pi * radius;
 }
 
-/*
- * 	Task 3
- * Написать функцию float housePrice(int area, float price).
- * Высчитать цену на квартиру по известным площади(area) и цене за квадратный метр(price) передаваемыми из main.
- * Распечатать вернувшееся значение в main.
- */
-
+// Task 3
 float housePrice(int area, float price)
 {
 	return area * price;
 }
 
-/*
- * 	Task 4.
- * Написать функцию float salary(float hours, float wage, float bonus).
- * В нее передать из main три аргумента:
- * float hours – отработанные часы,
- * float wage - ставка в час,
- * float bonus - бонус в процентах!
- * И чтобы эта функция вернула нам зарплату, результат распечатать в main.
- */
-
+// Task 4
 float salary(float hours, float wage, float bonus)
 {
 	float salaryReceived = hours * wage;
@@ -71,16 +46,7 @@ float salary(float hours, float wage, float bonus)
 	return salaryReceived + salaryBonus;
 }
 
-/*
- * 	Task 5.
- * Написать функцию float cash(float kg, float price, float discount).
- * Передать из main 3 аргумента сколько заплатить за продукт с учетом скидки и распечатать вернувшееся значение в main.
- * Например:
- * float kg(сколько кг берем)
- * float price(цена за килограмм)
- * float discount(скидка в процентах)
- */
-
+// Task 5
 float cash(float kg, float price, float discount)
 {
 	float pricePerKg = kg * price;
