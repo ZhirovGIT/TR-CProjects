@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 // declarations
-float percent(float a, float per);	// for first task
-float circleLength(float radius);	// for second task
-float housePrice(int area, float price);		// for third task
+float percent(float a, float per);				// for first task
+float circleLength(float radius);				// for second task
+float housePrice(int area, float price);			// for third task
 float salary(float hours, float wage, float bonus);	// for fourth task
 float cash(float kg, float price, float discount);	// for fifth task
 
@@ -12,15 +12,15 @@ int main()
 {
 	// Variables
 	float justNumber = 200;		// for first task
-	float justPercentt = 0.1;	// for first task
+	float justPercent = 0.1;	// for first task
 
 	float radius = 20;		// for second task
 
 	int area = 65;			// for third task
-	float pricePerArea = 14000.57;	// for third task
+	float pricePerArea = 14000.57;// for third task
 
 	float hours = 178.6;		// for fourth task
-	float wage = 30;		// for fourth task
+	float wage = 30;			// for fourth task
 	float bonus = 0.3;		// for fourth task
 
 	float kg = 2.;			// for fifth task
