@@ -13,7 +13,7 @@ int main()
 	fan(mode);
 
 	// Task 2
-	float hour = -12.59;
+	float hour = 12.59;
 	amPm(hour);
 
 	// Task 3
