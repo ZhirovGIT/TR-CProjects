@@ -65,8 +65,12 @@ void amPm(float hour)
 {
 	printf("Task 2.\n");
 
+	int castHour = hour;
+	float minutes = hour - castHour;
 
-	if ((hour >= 0.00 && hour <= 0.59) ||
+	if (hour >= 0.00 && hour < 11.60 && minutes < .6)
+	/*
+	((hour >= 0.00 && hour <= 0.59) ||
 			(hour >= 1.00 && hour < 1.60) ||
 			(hour >= 2.00 && hour < 2.60) ||
 			(hour >= 3.00 && hour < 3.60) ||
@@ -78,11 +82,14 @@ void amPm(float hour)
 			(hour >= 9.00 && hour < 9.60) ||
 			(hour >= 10.00 && hour < 10.60) ||
 			(hour >= 11.00 && hour < 11.60))
+			*/
 	{
 		printf("ante merediem\n\n");
 		return;
 	}
-	else if ((hour >= 12.00 && hour < 12.60) ||
+	else if (hour >= 12.00 && hour < 23.60 && minutes < .6)
+	/*
+	((hour >= 12.00 && hour < 12.60) ||
 			(hour >= 13.00 && hour < 13.60) ||
 			(hour >= 14.00 && hour < 14.60) ||
 			(hour >= 15.00 && hour < 15.60) ||
@@ -94,6 +101,7 @@ void amPm(float hour)
 			(hour >= 21.00 && hour < 21.60) ||
 			(hour >= 22.00 && hour < 22.60) ||
 			(hour >= 23.00 && hour < 23.60))
+			*/
 	{
 		printf("post merediem\n\n");
 		return;
