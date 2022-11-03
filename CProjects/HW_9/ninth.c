@@ -10,37 +10,30 @@ int main()
 {
 	int pureTime, city, year;
 	float hour;
-	//===
 
+	//===
 	printf("Enter pure time: ");
 	fflush(stdout);
 	scanf("%d", &pureTime);
-	//===
 
+	//===
 	printf("Enter exit time: ");
 	fflush(stdout);
 	scanf("%f", &hour);
 
-	int timeResult = delayTime(hour);
 	//===
-
 	printf("1 - Jerusalem \n2 - Tel-Aviv \n3 - Beer-Sheva \n4 - Haifa\n");
 	printf("Enter your city: ");
 	fflush(stdout);
 	scanf("%d", &city);
 
-	int cityResult = delayOnCity(city);
 	//===
-
 	printf("Enter the year of manufacture of the car: ");
 	fflush(stdout);
-    scanf("%d", &year);
+	scanf("%d", &year);
 
-    int yearResult = delayOnYear(year);
-    //===
-    printf("\n");
-    printf("Delay time = %d\n", timeResult + cityResult + yearResult);
-    printf("Total time = %d", timeOnRoute(pureTime, timeResult, cityResult, yearResult));
+	//===
+	timeOnRoute(pureTime, hour, city, year);
 
 	return 0;
 }
@@ -112,5 +105,15 @@ int delayOnYear(int year)
 // Function for task 2
 int timeOnRoute(int pureTime, float hour, int city, int year)
 {
-	return pureTime + hour + city + year;
+
+	int timeResult = delayTime(hour);
+	int cityResult = delayOnCity(city);
+	int yearResult = delayOnYear(year);
+
+	printf("\n");
+	printf("Delay time = %d\n", timeResult + cityResult + yearResult);
+	printf("Total time = %d", pureTime + timeResult + cityResult + yearResult);
+
+	return pureTime + timeResult + cityResult + yearResult;
 }
+
