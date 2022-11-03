@@ -105,7 +105,8 @@ int delayOnYear(int year)
 // Function for task 2
 int timeOnRoute(int pureTime, float hour, int city, int year)
 {
-
+	if (delayTime(hour) != -1 && delayOnCity(city) != -1 && delayOnYear(year) != -1)
+	{
 	int timeResult = delayTime(hour);
 	int cityResult = delayOnCity(city);
 	int yearResult = delayOnYear(year);
@@ -115,5 +116,11 @@ int timeOnRoute(int pureTime, float hour, int city, int year)
 	printf("Total time = %d", pureTime + timeResult + cityResult + yearResult);
 
 	return pureTime + timeResult + cityResult + yearResult;
+	}
+	else
+	{
+		printf("Incorrect input\n");
+		return -1;
+	}
 }
 
