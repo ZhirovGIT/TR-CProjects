@@ -93,11 +93,11 @@ int xPower (int x, int power)
 		return -1;
 	}
 
-	while (count != power)
+	do
 	{
 		x *= x;
 		count++;
-	}
+	} while (count != power);
 	printf("%d", x);
 
 	return x;
