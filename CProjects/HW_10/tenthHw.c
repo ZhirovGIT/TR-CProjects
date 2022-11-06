@@ -83,6 +83,8 @@ int sumDigits (int number)
 // Function for task 3.
 int xPower (int x, int power)
 {
+	// Option 1
+	/*
 	int count = 2;
 
 	if (power == 0) return 1;
@@ -99,6 +101,28 @@ int xPower (int x, int power)
 		count++;
 	} while (count != power);
 	printf("%d", x);
+	*/
+
+	// Option 2
+	int xPower (int x, int power)
+	{
+		int result = 1;
+
+		if (power == 0)
+		{
+			printf("Result: %d", x = 1);
+			return 1;
+		}
+
+		do
+		{
+			result *= x;
+			power--;
+		} while (power != 0);
+		printf("Result: %d", result);
+
+		return result;
+	}
 
 	return x;
 }
