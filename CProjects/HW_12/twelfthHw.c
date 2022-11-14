@@ -83,25 +83,25 @@ int hasSubNumber(int number, int subNumber)
 		return 0;
 	}
 
- int count = countDogits(subNumber);
- int divider = xPowY(10, count);
+        int count = countDogits(subNumber);
+        int divider = xPowY(10, count);
 
- for(; number != 0; number /= 10)
- {
-  if(number % divider == subNumber) return 1;
- }
+        for(; number != 0; number /= 10)
+        {
+            if(number % divider == subNumber) return 1;
+        }
 	return 0;
 }
 
 // Function - find number search area
 int countDigits(int subNumber)
 {
- int count;
- for (count = 0; subNumber != 0; number /= 10)
- {
-  count++;
- }
- return count;
+        int count;
+        for (count = 0; subNumber != 0; number /= 10)
+        {
+             count++;
+        }
+        return count;
 }
 
 int xPowY(int number, int power)
