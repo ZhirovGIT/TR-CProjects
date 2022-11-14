@@ -33,8 +33,10 @@ int main()
 }
 
 // Task 1
-int isLuckyNumberPiter(int number) {
-	if (number <= 10) {
+int isLuckyNumberPiter(int number) 
+{
+	if (number <= 10) 
+{
 		printf("Wrong number!!!\n");
 		return -1;
 	}
@@ -76,22 +78,33 @@ int sumEvenDigits(int number)
 // Task 2
 int hasSubNumber(int number, int subNumber)
 {
-	if ((number < 10 && subNumber < 10) || number < subNumber)
+	if (number <= 0 || subNumber <= 0 || number < subNumber)
 	{
-		printf("Wrong number!!!\n");
-		return -1;
+		return 0;
 	}
 
+ int count = countDogits(subNumber);
+ int divider = xPowY(10, count);
 
-
-	return 1;
+ for(; number != 0; number /= 10)
+ {
+  if(number % divider == subNumber) return 1;
+ }
+	return 0;
 }
 
-// Funñtion - find number search area
-int areaSearch (int subNumber)
+// Function - find number search area
+int countDigits(int subNumber)
 {
-	for (; subNumber != 0; subNumber / 10)
-	{
+ int count;
+ for (count = 0; subNumber != 0; number /= 10)
+ {
+  count++;
+ }
+ return count;
+}
 
-	}
+int xPowY(int number, int power)
+{
+ 
 }
