@@ -1,7 +1,13 @@
 #include <stdio.h>
 
+// Declarations
 int isLuckyNumberPiter(int number); // for task 1
-int hasSubNumber(int number, int subNumber); // far task 1
+int hasSubNumber(int number, int subNumber); // for task 2
+
+int sumOddDigits(int number);
+int sumEvenDigits(int number);
+int xPowY(int number, int power);
+int countDigits(int subNumber);
 
 int main()
 {
@@ -78,10 +84,11 @@ int sumEvenDigits(int number)
 // Task 2
 int hasSubNumber(int number, int subNumber)
 {
-	if (number <= 0 || subNumber <= 0 || number < subNumber)
+	if (number < 0 || subNumber < 0 || number < subNumber)
 	{
 		return 0;
 	}
+        else if (number == 0 && subNumber == 0) return 0;
 
         int count = countDogits(subNumber);
         int divider = xPowY(10, count);
@@ -97,6 +104,8 @@ int hasSubNumber(int number, int subNumber)
 int countDigits(int subNumber)
 {
         int count;
+
+        if (subNumber == 0) return 1;
         for (count = 0; subNumber != 0; number /= 10)
         {
              count++;
@@ -106,5 +115,12 @@ int countDigits(int subNumber)
 
 int xPowY(int number, int power)
 {
+ if(power < 0) return 0;
  
+ int res;
+ for (res = 1; power > 0; power --)
+ {
+  res += number;
+ }
+ return res;
 }
