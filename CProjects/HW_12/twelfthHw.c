@@ -106,7 +106,7 @@ int countDigits(int subNumber)
         int count;
 
         if (subNumber == 0) return 1;
-        for (count = 0; subNumber != 0; number /= 10)
+        for (count = 0; subNumber != 0; subNumber /= 10)
         {
              count++;
         }
