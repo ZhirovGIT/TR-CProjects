@@ -97,21 +97,18 @@ void printReverseNumber(int number)
 {
 	/*
 	 * Option 1
-	 *
-	 * int reverse = 0;
-	 *
 	 * if (number <= 0)
 	 * {
 	 * 		printf("Wrong number!!!\n\n");
 	 * 		return;
 	 * }
 	 *
-	 * while (number > 0)
+	 * do
 	 * {
-	 * 		reverse = (reverse * 10) + (number % 10);	// Increase the rank and add find the last digit
-	 * 		number /= 10;	// Remove last digit
-	 * }
-	 * printf("Reverse of number: %d\n\n", reverssResult);
+	 * 		printf("%d ", number % 10); //5 4 3 2 1
+	 * 		number /= 10;
+	 * } while (number != 0);
+	 * printf("\n");
 	*/
 
 	// Option 2
