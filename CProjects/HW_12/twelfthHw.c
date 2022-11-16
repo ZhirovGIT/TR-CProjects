@@ -90,7 +90,7 @@ int hasSubNumber(int number, int subNumber)
 	}
         else if (number == 0 && subNumber == 0) return 0;
 
-        int count = countDogits(subNumber);
+        int count = countDigits(subNumber);
         int divider = xPowY(10, count);
 
         for(; number != 0; number /= 10)
