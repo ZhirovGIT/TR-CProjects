@@ -95,7 +95,7 @@ int hasSubNumber(int number, int subNumber)
 
         for(; number != 0; number /= 10)
         {
-            if(number % divider == subNumber) return 1;
+         	if(number % divider == subNumber) return 1;
         }
 	return 0;
 }
@@ -115,12 +115,13 @@ int countDigits(int subNumber)
 
 int xPowY(int number, int power)
 {
- if(power < 0) return 0;
+ 	if(power < 0) return 0;
  
- int res;
- for (res = 1; power > 0; power --)
- {
-  res += number;
- }
- return res;
+ 	int res;
+	
+ 	for (res = 1; power > 0; power --)
+ 	{
+  		res += number;
+ 	}
+ 	return res;
 }
