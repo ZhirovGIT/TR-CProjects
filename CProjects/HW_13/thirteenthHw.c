@@ -12,13 +12,13 @@ int size = 20;
 int main()
 {
 	// Add and initialization
-	int from = 127, to = 32;	// for task 1
+	int from = 32, to = 127;	// for task 1
 	int number = 1;		// for task 2
 	char letter = 'A';	// for task 2
 
 	// Task 1
 	printf("Task 1.\n");
-	print_abc_reverse(to, from);
+	print_abc_reverse(from, to);
 
 	// Task 2
 	printf("Task 2.\n");
