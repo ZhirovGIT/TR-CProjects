@@ -73,7 +73,7 @@ int sumEvenElements(int ar[], int size)
 	int i;
 	for (i = 0; i < size; i++)
 	{
-		if(ar[i] % 2 == 0) sum+= ar[i];
+		if(!(ar[i] % 2)) sum+= ar[i];
 	}
 
 	return sum;
@@ -86,8 +86,13 @@ void changeElements(int ar[], int size)
 	int i;
 	for (i = 0; i < size; i++)
 	{
-		if (ar[i] % 2 == 0) ar[i] = 0;
-		else ar[i] = 1;
+		// Option 1
+//		if (ar[i] % 2 == 0) ar[i] = 0;
+//		else ar[i] = 1;
+
+		// Option 2
+		ar[i] = ar[i] % 2 ? 1 : 0;
+
 		printf("[%d] ", ar[i]);
 	}
 	printf("\n\n");
@@ -96,30 +101,80 @@ void changeElements(int ar[], int size)
 // Function for TASK 4
 void mergeArrays(int ar1[], int ar2[], int size1, int size2)
 {
-	printf("Merge ARRAY -> ");
-	int arMerge[10];
+	// My option
+	/*
+	 * 	printf("Merge ARRAY -> ");
+	 *  int arMerge[10];
+	 * 	int i, j;
+	 *
+	 * 	// STARTING MERGE
+	 * 	// get ar1[]
+	 * 	for (i = 0; i < size1; i++)
+	 * 	{
+	 * 		arMerge[i] = ar1[i];
+	 * 	}
+	 *
+	 * 	// get ar2[]
+	 * 	for (j = i; j < i + size2; j++)
+	 * 	{
+	 * 		arMerge[j] = ar2[j];
+	 * 	}
+	 * 	// ENDING MERGE
+	 *
+	 * 	// print arMerge[10]
+	 * 	for (i = 0; i < size1 + size2; i++)
+	 * 	{
+	 * 		printf("[%d] ", arMerge[j]);
+	 * 	}
+	*/
 
-	int i, j;
+	// Teacher option
+	int sizeRes = size1 + size2;	// create array size
+	int arRes[sizeRes];		// create array
+	int i1, i2, i3;	// indexes for arrays
 
-	// STARTING MERGE
-	// get ar1[]
-	for (i =0; i < size1; i++)
+	/*
+	 * Option 1
+	 * // get first array
+	 * for(i1 = 0; i1 < size1; i1++)
+	 * {
+	 * 		arRes[i1] = ar1[i1];
+	 * }
+	 *
+	 * // get second array
+	 * // start i2  save in i3
+	 * //         sum i1 = 4 elements
+	 * for (i2 = 0, i3 = size1; i2 < size2; i2++, i3++)
+	 * {
+	 * 		arRes[i3] = ar2[i2];
+	 * }
+	 */
+
+	/*
+	 *	ar1 -> [6] [1] [0] [8] - first loop
+	 *	arRes -> [6] [1] [0] [8]   []  [] []
+	 *	                         =size1 (= 4 elements)
+	 *	ar2 -> [10] [10] [11]  - second loop
+	 *	arRes -> [6] [1] [0] [8]   [10] [10] [11]
+	 *	                        start ar2
+	 */
+
+	// Option 2
+	for(i1 = 0, i2 = 0, i3 = 0; i3 < sizeRes; i3++)
 	{
-		arMerge[i] = ar1[i];
+		if (i1 < size1)
+		{
+			arRes[i3] = ar1[i1];
+			i1++;
+		}
+		else // i1 == size
+		{
+			arRes[i3] = ar2[i2];
+			i2++;
+		}
+		printf("%d ", arRes[i3]);
 	}
-
-	// get ar2[]
-	for (j = i; j < i + size2; j++)
-	{
-		arMerge[j] = ar2[j];
-	}
-	// ENDING MERGE
-
-	// print arMerge[10]
-	for (i = 0; i < size1 + size2; i++)
-	{
-		printf("[%d] ", arMerge[j]);
-	}
+	printf("\n");
 }
 
 // Function -  print arrays
@@ -131,3 +186,4 @@ void printArray(int ar[], int size) {
 	}
 	printf("\n");
 }
+
