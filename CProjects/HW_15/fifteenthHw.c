@@ -76,12 +76,18 @@ void printArray(int ar[], int size)
 // Function for TASK 1
 int searchMax(int arr[], int size)
 {
-	int max = arr[0], i;
-	for (i = 1; i < size; i++)
+	int maxIndex, max = 0;
+
+	int i;
+	for (i = 0; i < size; i++)
 	{
-		if (max < arr[i]) max = arr[i];
+		if(max <= arr[i])
+		{
+			max = arr[i];	// remember max value in index
+			maxIndex = i;	// remember index
+		}
 	}
-	return max;
+	return maxIndex;
 }
 
 // Function for TASK 2
