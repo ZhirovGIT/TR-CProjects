@@ -25,7 +25,7 @@ int main()
 	printArray(arrTaskOne, size);
 
 	int resultFirstTask = searchMax(arrTaskOne, size);
-	printf("Max element in array = %d\n\n", resultFirstTask);
+	printf("Max index in array = %d\n\n", resultFirstTask);
 	//===
 
 	// Task 2.
@@ -76,18 +76,24 @@ void printArray(int ar[], int size)
 // Function for TASK 1
 int searchMax(int arr[], int size)
 {
-	int maxIndex, max = 0;
+	int max = 0;
+//	int maxIndex;
 
 	int i;
 	for (i = 0; i < size; i++)
 	{
-		if(max <= arr[i])
-		{
-			max = arr[i];	// remember max value in index
-			maxIndex = i;	// remember index
-		}
+		// Option 1
+//		if(max <= arr[i])
+//		{
+//			max = arr[i];	// remember max value in index
+//			maxIndex = i;	// remember index
+//		}
+//		return maxIndex;
+
+		// Option 2
+		if(arr[max]< arr[i]) max = i;
 	}
-	return maxIndex;
+	return max;
 }
 
 // Function for TASK 2
@@ -100,7 +106,7 @@ float avg(int arr[], int size)
 	{
 		sum += arr[i];
 	}
-	average = sum / i;
+	average = 1. * sum / i;
 
 	return average;
 }
