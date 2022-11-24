@@ -6,6 +6,7 @@
 int searchMax(int arr[], int size);	// task 1
 float avg(int arr[], int size);		// task 2
 void firstLastPosSum(int arr[], int size);	// task 3
+void firstLastPosSum2(int arr[], int size);
 
 void randomNumbersArrayInRange(int ar[], int size, int min, int max);	// fills an array random numbers in the range
 void printArray(int arr[], int size);	// print array
@@ -114,20 +115,59 @@ float avg(int arr[], int size)
 // Function for Task 3
 void firstLastPosSum(int arr[], int size)
 {
-	int sum = 0;
-	int firstNum, lastNum, i, j;
+//	int sum = 0;
+	int firstNum = -1, lastNum = -1, i, j;
 
-	for(i = 0, j = size - 1;
-			i < size && j >= 0;
-			i++, j--)
+	// My option
+//	for(i = 0, j = size - 1;
+//			i < size && j >= 0;
+//			i++, j--)
+//	{
+//		if(arr[i] >= 0)
+//		{
+//			firstNum = arr[i];
+//		}
+//		lastNum = arr[j];
+//	}
+//	sum = firstNum + lastNum;
+//
+//	printf("Sum = %d", sum);
+
+	// Teachers option
+	for (i = 0; i < size; i++)
 	{
-		if(arr[i] >= 0)
+		if(arr[i] > 0)
 		{
 			firstNum = arr[i];
+			break;
 		}
-		lastNum = arr[j];
 	}
-	sum = firstNum + lastNum;
+	for (j = size - 1; j >= 0; j--)
+	{
+		if (arr[j] > 0)
+		{
+			lastNum = arr[j];
+			break;
+		}
+	}
+	// if we did not meet positive numbers in the array
+	if(firstNum != -1) printf("Sum = %d", firstNum + lastNum);
+}
 
-	printf("Sum = %d", sum);
+// TASK 3. OPTION 2
+void firstLastPosSum2(int arr[], int size)
+{
+	int i, firstNum = -1, lastNum = -1;
+
+	for(i = 0; i < size; i++)
+	{
+		if (arr[i] > 0)
+		{
+			if(firstNum == -1)
+			{
+				firstNum = arr[i];
+			}
+			lastNum = arr[i];
+		}
+	}
 }
