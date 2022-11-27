@@ -184,35 +184,16 @@ void evenFirst(int arr[], int size)
 void evenFirstAdv(int arr[], int size)
 {
 	int i, j;
-	int min_i, min_e;
 
 	// Bubble
-//	for (i = 0; i < size - 1; i++)
-//	{
-//		for (j = 0; j < size - i - 1; j++)
-//		{
-//			if(arr[j] > arr[j+1]) swap(arr, j, j+1);
-//			if(arr[j] % 2 != 0) swap(arr, j, j+1);	// even first up & odd second down
-//		}
-//	}
-
-	// Select
 	for (i = 0; i < size - 1; i++)
 	{
-		min_i = i;
-		min_e = arr[i];
-
-		for (j = i + 1; j < size; j++)
+		for (j = 0; j < size - i - 1; j++)
 		{
-			if (arr[j] < min_e)
-			{
-				min_e = arr[j];
-				min_i = j;
-			}
+			if(arr[j] > arr[j+1]) swap(arr, j, j+1);
+			if(arr[j] % 2 != 0) swap(arr, j, j+1);	// even first up & odd second down
 		}
-		if (i != min_i) swap(arr, i, min_i);
 	}
-
 }
 //================================================
 
