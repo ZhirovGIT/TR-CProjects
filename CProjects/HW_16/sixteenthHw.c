@@ -73,13 +73,32 @@ int main()
 void sortReverse(int arr[], int size)
 {
 	int i, j;
+	int min_i, min_e;
 
+	// Bubble
+//	for (i = 0; i < size - 1; i++)
+//	{
+//		for (j = 0; j < size - 1 - i; j++)
+//		{
+//			if (arr[j] < arr [j+1]) swap(arr, j, j+1);	// change '>' to '<'
+//		}
+//	}
+
+	// Select
 	for (i = 0; i < size - 1; i++)
 	{
-		for (j = 0; j < size - 1 - i; j++)
+		min_e = arr[i];
+		min_i = i;
+
+		for (j = 1 + i; j < size; j++)
 		{
-			if (arr[j] < arr [j+1]) swap(arr, j, j+1);	// change '>' to '<'
+			if (arr[j] > min_e)		// swap '<' to '>'
+			{
+				min_e = arr[j];
+				min_i = j;
+			}
 		}
+		if(i != min_i) swap(arr, i, min_i);
 	}
 }
 //================================================
@@ -95,13 +114,32 @@ void sortInRange(int arr[], int size, int start, int finish)
 	}
 
 	int i, j;
+	int min_i, min_e;
 
-	for (i = 0; i < size - 1; i++)
+	// Bubble
+//	for (i = 0; i < size - 1; i++)
+//	{
+//		for (j = start; j <= finish - i - 1; j++)	// add start and finish
+//		{
+//			if (arr[j] > arr[j+1]) swap(arr, j, j+1);
+//		}
+//	}
+
+	// Select
+	for(i = start; i < size - 1; i++)	// add start
 	{
-		for (j = start; j <= finish - i - 1; j++)	// add start and finish
+		min_e = arr[i];
+		min_i = i;
+
+		for (j = i + 1; j <= finish; j++)	// add finish
 		{
-			if (arr[j] > arr[j+1]) swap(arr, j, j+1);
+			if (arr[j] < min_e)
+			{
+				min_e = arr[j];
+				min_i = j;
+			}
 		}
+		if (i != min_i) swap (arr, i, min_i);
 	}
 }
 //================================================
@@ -111,13 +149,32 @@ void sortInRange(int arr[], int size, int start, int finish)
 void evenFirst(int arr[], int size)
 {
 	int i, j;
+	int min_i, min_e;
 
+	// Bubble
+//	for (i = 0; i < size - 1; i++)
+//	{
+//		for (j = 0; j < size - 1 - i; j++)
+//		{
+//			if (arr [j] % 2 != 0) swap(arr, j, j+1);	// even first (not ascending)
+//		}
+//	}
+
+	// Select
 	for (i = 0; i < size - 1; i++)
 	{
-		for (j = 0; j < size - 1 - i; j++)
+		min_i = i;
+		min_e = arr[i];
+
+		for (j = i + 1; j < size; j++)
 		{
-			if (arr [j] % 2 != 0) swap(arr, j, j+1);	// even first (not ascending)
+			if (arr[j] % 2 == 0)	// even first (not ascending)
+			{
+				min_e = arr[j];
+				min_i = j;
+			}
 		}
+		if (i != min_i) swap (arr, i, min_i);
 	}
 }
 //================================================
@@ -127,15 +184,35 @@ void evenFirst(int arr[], int size)
 void evenFirstAdv(int arr[], int size)
 {
 	int i, j;
+	int min_i, min_e;
 
+	// Bubble
+//	for (i = 0; i < size - 1; i++)
+//	{
+//		for (j = 0; j < size - i - 1; j++)
+//		{
+//			if(arr[j] > arr[j+1]) swap(arr, j, j+1);
+//			if(arr[j] % 2 != 0) swap(arr, j, j+1);	// even first up & odd second down
+//		}
+//	}
+
+	// Select
 	for (i = 0; i < size - 1; i++)
 	{
-		for (j = 0; j < size - i - 1; j++)
+		min_i = i;
+		min_e = arr[i];
+
+		for (j = i + 1; j < size; j++)
 		{
-			if(arr[j] > arr[j+1]) swap(arr, j, j+1);
-			if(arr[j] % 2 != 0) swap(arr, j, j+1);	// even first up & odd second down
+			if (arr[j] < min_e)
+			{
+				min_e = arr[j];
+				min_i = j;
+			}
 		}
+		if (i != min_i) swap(arr, i, min_i);
 	}
+
 }
 //================================================
 
