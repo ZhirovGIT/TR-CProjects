@@ -93,13 +93,10 @@ int searchAdv(int arr[], int size, int number)
 {
 	int left = 0;
 		int right = size - 1;
-		int count = 0;
 
 		while (left <= right)
 		{
 			int middle = (left+right)/2;
-
-			count++;
 
 			if (arr[middle] == number) return middle;
 			else if(arr[middle] < number) left = middle + 1;
