@@ -101,13 +101,11 @@ int searchAdv(int arr[], int size, int number)
 
 			count++;
 
-			if (arr[middle] == number) return arr[middle - size];	// search INDEX
+			if (arr[middle] == number) return middle;
 			else if(arr[middle] < number) left = middle + 1;
 			else if(arr[middle] > number) right = middle - 1;
 		}
 		return -1;
-
-	return 0;
 }
 
 //==================================
